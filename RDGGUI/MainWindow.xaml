@@ -1,0 +1,164 @@
+﻿<Window x:Class="RDGGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:RDGGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="705.521" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="340*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Load NDF_Win.dat" HorizontalAlignment="Left" Margin="0,13,0,0" VerticalAlignment="Top" Width="892" Click="Button_Load_Click"/>
+        <TextBox Name="dialogLabel" Text="" HorizontalAlignment="Left" Margin="0,558,0,0" Grid.Row="1" VerticalAlignment="Top" Width="892" IsReadOnly="True"/>
+        <Button Name="buttonGenerate" Content="Generate" HorizontalAlignment="Left" Margin="380,581,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Click="Button_Generate_Click" IsEnabled="False" RenderTransformOrigin="0.486,4.412"/>
+        <ComboBox Name="Nationality" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.223,-0.113"/>
+
+        <Label Content="Logistics" HorizontalAlignment="Left" Margin="10,59,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="83"/>
+        <xctk:IntegerUpDown x:Name="LogisticsWeight" HorizontalAlignment="Left" Height="23" Margin="122,60,0,0" Grid.Row="1" Text="80" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <xctk:IntegerUpDown Name="LogisticsMinYear" HorizontalAlignment="Left" Height="23" Margin="192,61,0,0" Grid.Row="1" Text="1930" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.5,0.5"/>
+        <xctk:IntegerUpDown Name="LogisticsMaxYear" HorizontalAlignment="Left" Height="23" Margin="262,61,0,0" Grid.Row="1" Text="2000" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.516,0.079"/>
+        <Label Content="CMD INF" HorizontalAlignment="Left" Margin="332,33,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="CmdInfWeight" HorizontalAlignment="Left" Height="23" Margin="332,60,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="CMD VEH" HorizontalAlignment="Left" Margin="402,32,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="CmdVeh" HorizontalAlignment="Left" Height="23" Margin="402,60,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="CMD ARM" HorizontalAlignment="Left" Margin="477,32,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="CmdArm" HorizontalAlignment="Left" Height="23" Margin="477,60,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="5.759,0.689"/>
+        <Label Content="CMD HEL" HorizontalAlignment="Left" Margin="547,32,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="CmdHel" HorizontalAlignment="Left" Height="23" Margin="547,60,0,0" Grid.Row="1" Text="0" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="2.422,0.549"/>
+        <Label Content="SUP VEH" HorizontalAlignment="Left" Margin="617,32,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="SupVeh" HorizontalAlignment="Left" Height="23" Margin="617,60,0,0" Grid.Row="1" Text="200" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="SUP HEL" HorizontalAlignment="Left" Margin="687,32,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="SupHel" HorizontalAlignment="Left" Height="23" Margin="687,60,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="FOB" HorizontalAlignment="Left" Margin="757,32,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="fobWeight" HorizontalAlignment="Left" Height="23" Margin="757,60,-6,0" Grid.Row="1" Text="50" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+
+        <Label Content="Infantry" HorizontalAlignment="Left" Margin="10,115,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="83"/>
+        <xctk:IntegerUpDown x:Name="InfantryWeight" HorizontalAlignment="Left" Height="23" Margin="122,116,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.457,-0.059"/>
+        <xctk:IntegerUpDown x:Name="InfantryMinYear" HorizontalAlignment="Left" Height="23" Margin="192,116,0,0" Grid.Row="1" Text="1975" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.123,-0.062"/>
+        <xctk:IntegerUpDown x:Name="InfantryMaxYear" HorizontalAlignment="Left" Height="23" Margin="262,116,0,0" Grid.Row="1" Text="2000" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="LINE" HorizontalAlignment="Left" Margin="332,88,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="lineInfWeight" HorizontalAlignment="Left" Height="23" Margin="332,116,0,0" Grid.Row="1" Text="300" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="ATGM" HorizontalAlignment="Left" Margin="402,88,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="atgmInfWeight" HorizontalAlignment="Left" Height="23" Margin="402,115,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="FIRE SUP" HorizontalAlignment="Left" Margin="477,88,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="fireSupInfWeight" HorizontalAlignment="Left" Height="23" Margin="477,115,0,0" Grid.Row="1" Text="50" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="5.759,0.689"/>
+        <Label Content="MANPAD" HorizontalAlignment="Left" Margin="547,88,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="manpadInfWeight" HorizontalAlignment="Left" Height="23" Margin="547,115,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="2.422,0.549"/>
+        <Label Content="ENGINEER" HorizontalAlignment="Left" Margin="617,88,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="engineerWeight" HorizontalAlignment="Left" Height="23" Margin="617,115,0,0" Grid.Row="1" Text="50" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="SF" HorizontalAlignment="Left" Margin="687,88,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="sfInfWeight" HorizontalAlignment="Left" Height="23" Margin="687,115,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="RESERVE" HorizontalAlignment="Left" Margin="757,88,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="reserveInfWeight" HorizontalAlignment="Left" Height="23" Margin="757,115,0,0" Grid.Row="1" Text="25" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="LIGHT" HorizontalAlignment="Left" Margin="827,88,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="lightInfWeight" HorizontalAlignment="Left" Height="23" Margin="827,115,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+
+        <Label Content="Support" HorizontalAlignment="Left" Margin="10,171,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="83"/>
+        <xctk:IntegerUpDown x:Name="SupportWeight" HorizontalAlignment="Left" Height="23" Margin="122,172,0,0" Grid.Row="1" Text="80" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <xctk:IntegerUpDown x:Name="SupportMinYear" HorizontalAlignment="Left" Height="23" Margin="192,172,0,0" Grid.Row="1" Text="1975" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <xctk:IntegerUpDown x:Name="SupportMaxYear" HorizontalAlignment="Left" Height="23" Margin="262,172,0,0" Grid.Row="1" Text="2000" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="MORTAR" HorizontalAlignment="Left" Margin="332,144,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="mortarWeight" HorizontalAlignment="Left" Height="23" Margin="332,171,0,0" Grid.Row="1" Text="200" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="HOWITZ" HorizontalAlignment="Left" Margin="402,144,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="howitzerWeight" HorizontalAlignment="Left" Height="23" Margin="402,171,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="MRLS" HorizontalAlignment="Left" Margin="477,144,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="mrlsWeight" HorizontalAlignment="Left" Height="23" Margin="477,171,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="SPAAG" HorizontalAlignment="Left" Margin="547,144,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="spaagWeight" HorizontalAlignment="Left" Height="23" Margin="547,171,0,0" Grid.Row="1" Text="150" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="MISSILE" HorizontalAlignment="Left" Margin="617,144,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="missileWeight" HorizontalAlignment="Left" Height="23" Margin="617,171,0,0" Grid.Row="1" Text="250" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+
+        <Label Content="Tank" HorizontalAlignment="Left" Margin="10,225,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="83"/>
+        <xctk:IntegerUpDown x:Name="TankWeight" HorizontalAlignment="Left" Height="23" Margin="122,226,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <xctk:IntegerUpDown x:Name="TankMinYear" HorizontalAlignment="Left" Height="23" Margin="192,226,0,0" Grid.Row="1" Text="1986" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <xctk:IntegerUpDown x:Name="TankMaxYear" HorizontalAlignment="Left" Height="23" Margin="262,226,0,0" Grid.Row="1" Text="2000" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="CAVALRY" HorizontalAlignment="Left" Margin="332,199,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="cavalryTankWeigth" HorizontalAlignment="Left" Height="23" Margin="332,225,0,0" Grid.Row="1" Text="50" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="LIGHT" HorizontalAlignment="Left" Margin="402,199,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="lightTankWeigth" HorizontalAlignment="Left" Height="23" Margin="402,225,0,0" Grid.Row="1" Text="50" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="MEDIUM" HorizontalAlignment="Left" Margin="477,199,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="mediumTankWeigth" HorizontalAlignment="Left" Height="23" Margin="477,225,0,0" Grid.Row="1" Text="150" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="HEAVY" HorizontalAlignment="Left" Margin="547,199,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="heavyTankWeigth" HorizontalAlignment="Left" Height="23" Margin="547,225,0,0" Grid.Row="1" Text="150" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+
+        <Label Content="Recon" HorizontalAlignment="Left" Margin="10,281,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="83"/>
+        <xctk:IntegerUpDown x:Name="ReconWeight" HorizontalAlignment="Left" Height="23" Margin="122,281,0,0" Grid.Row="1" Text="80" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <xctk:IntegerUpDown x:Name="ReconMinYear" HorizontalAlignment="Left" Height="23" Margin="192,281,0,0" Grid.Row="1" Text="1975" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <xctk:IntegerUpDown x:Name="ReconMaxYear" HorizontalAlignment="Left" Height="23" Margin="262,281,0,0" Grid.Row="1" Text="2000" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="INFANTRY" HorizontalAlignment="Left" Margin="332,253,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="infantryRecWeigth" HorizontalAlignment="Left" Height="23" Margin="332,281,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="SF" HorizontalAlignment="Left" Margin="402,253,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="sfRecWeigth" HorizontalAlignment="Left" Height="23" Margin="402,281,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="VEHICLE" HorizontalAlignment="Left" Margin="477,253,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="vehicleRecWeigth" HorizontalAlignment="Left" Height="23" Margin="477,281,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="HELO" HorizontalAlignment="Left" Margin="547,253,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="heloRecWeigth" HorizontalAlignment="Left" Height="23" Margin="547,281,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+
+        <Label Content="Vehicle" HorizontalAlignment="Left" Margin="10,336,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="83"/>
+        <xctk:IntegerUpDown x:Name="VehicleWeight" HorizontalAlignment="Left" Height="23" Margin="122,337,0,0" Grid.Row="1" Text="40" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <xctk:IntegerUpDown x:Name="VehicleMinYear" HorizontalAlignment="Left" Height="23" Margin="192,337,0,0" Grid.Row="1" Text="1975" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.635,-0.467"/>
+        <xctk:IntegerUpDown x:Name="VehicleMaxYear" HorizontalAlignment="Left" Height="23" Margin="262,337,0,0" Grid.Row="1" Text="2000" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="ATGM" HorizontalAlignment="Left" Margin="332,309,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="atgmVehWeigth" HorizontalAlignment="Left" Height="23" Margin="332,337,0,0" Grid.Row="1" Text="200" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="FIRE SUP" HorizontalAlignment="Left" Margin="402,309,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="fireSupVehWeigth" HorizontalAlignment="Left" Height="23" Margin="402,337,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="FLAME" HorizontalAlignment="Left" Margin="477,309,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="flameWeigth" HorizontalAlignment="Left" Height="23" Margin="477,336,0,0" Grid.Row="1" Text="25" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+
+        <Label Content="Helicopter" HorizontalAlignment="Left" Margin="10,392,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="83"/>
+        <xctk:IntegerUpDown x:Name="HelicopterWeight" HorizontalAlignment="Left" Height="23" Margin="122,393,0,0" Grid.Row="1" Text="80" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.506,1.726"/>
+        <xctk:IntegerUpDown x:Name="HelicopterMinYear" HorizontalAlignment="Left" Height="23" Margin="192,393,0,0" Grid.Row="1" Text="1975" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <xctk:IntegerUpDown x:Name="HelicopterMaxYear" HorizontalAlignment="Left" Height="23" Margin="262,393,0,0" Grid.Row="1" Text="2000" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="GUNSHIP" HorizontalAlignment="Left" Margin="332,365,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="gunshipWeigth" HorizontalAlignment="Left" Height="23" Margin="332,393,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="ATGM" HorizontalAlignment="Left" Margin="402,365,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="atgmHeloWeigth" HorizontalAlignment="Left" Height="23" Margin="402,392,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="AA" HorizontalAlignment="Left" Margin="477,365,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="aaHeloWeigth" HorizontalAlignment="Left" Height="23" Margin="477,392,0,0" Grid.Row="1" Text="25" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+
+        <Label Content="Plane" HorizontalAlignment="Left" Margin="10,448,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="83"/>
+        <xctk:IntegerUpDown x:Name="PlaneWeight" HorizontalAlignment="Left" Height="23" Margin="122,449,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.506,1.726"/>
+        <xctk:IntegerUpDown x:Name="PlaneMinYear" HorizontalAlignment="Left" Height="23" Margin="192,449,0,0" Grid.Row="1" Text="1975" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <xctk:IntegerUpDown x:Name="PlaneMaxYear" HorizontalAlignment="Left" Height="23" Margin="262,449,0,0" Grid.Row="1" Text="2000" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="ANTITANK" HorizontalAlignment="Left" Margin="332,421,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="antitankWeight" HorizontalAlignment="Left" Height="23" Margin="332,449,0,0" Grid.Row="1" Text="150" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="MULTIROLE" HorizontalAlignment="Left" Margin="402,421,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="multiroleWeight" HorizontalAlignment="Left" Height="23" Margin="402,448,0,0" Grid.Row="1" Text="150" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="BOMBER" HorizontalAlignment="Left" Margin="477,421,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="bomberWeight" HorizontalAlignment="Left" Height="23" Margin="477,448,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="ASF" HorizontalAlignment="Left" Margin="547,421,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="asfWeight" HorizontalAlignment="Left" Height="23" Margin="547,448,0,0" Grid.Row="1" Text="200" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="SEAD" HorizontalAlignment="Left" Margin="617,421,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="seadWeight" HorizontalAlignment="Left" Height="23" Margin="617,448,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="INTERCEP" HorizontalAlignment="Left" Margin="687,421,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="interceptorWeight" HorizontalAlignment="Left" Height="23" Margin="687,449,0,0" Grid.Row="1" Text="50" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+
+        <Label Content="Naval" HorizontalAlignment="Left" Margin="10,504,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="83"/>
+        <xctk:IntegerUpDown x:Name="NavalWeight" HorizontalAlignment="Left" Height="23" Margin="122,505,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.506,1.726"/>
+        <xctk:IntegerUpDown x:Name="NavalMinYear" HorizontalAlignment="Left" Height="23" Margin="192,505,0,0" Grid.Row="1" Text="1940" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.536,-0.374"/>
+        <xctk:IntegerUpDown x:Name="NavalMaxYear" HorizontalAlignment="Left" Height="23" Margin="262,505,0,0" Grid.Row="1" Text="2000" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown"/>
+        <Label Content="COAST" HorizontalAlignment="Left" Margin="332,477,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="coastalWeight" HorizontalAlignment="Left" Height="23" Margin="332,505,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="SUPPORT" HorizontalAlignment="Left" Margin="402,477,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="supportShipWeight" HorizontalAlignment="Left" Height="23" Margin="402,504,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="FRIGATE" HorizontalAlignment="Left" Margin="477,477,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="frigateWeight" HorizontalAlignment="Left" Height="23" Margin="477,504,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="SUPPLY" HorizontalAlignment="Left" Margin="547,477,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="supplyShipWeight" HorizontalAlignment="Left" Height="23" Margin="547,504,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="AS HELO" HorizontalAlignment="Left" Margin="617,477,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="asHeloWeight" HorizontalAlignment="Left" Height="23" Margin="617,504,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="AS PLANE" HorizontalAlignment="Left" Margin="687,477,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="asPlaneWeight" HorizontalAlignment="Left" Height="23" Margin="687,504,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+        <Label Content="AS TRUCK" HorizontalAlignment="Left" Margin="757,477,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <xctk:IntegerUpDown x:Name="asTruckWeight" HorizontalAlignment="Left" Height="23" Margin="757,504,0,0" Grid.Row="1" Text="100" VerticalAlignment="Top" Width="65" PreviewKeyDown="NumberOnlyPreviewKeyDown" RenderTransformOrigin="0.496,0.128"/>
+
+        <Label Content="Weigth" HorizontalAlignment="Left" Margin="127,32,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <Label Content="Min Year" HorizontalAlignment="Left" Margin="192,33,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+        <Label Content="Max Year" HorizontalAlignment="Left" Margin="262,33,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.08" Height="23" Width="65"/>
+
+    </Grid>
+</Window>
